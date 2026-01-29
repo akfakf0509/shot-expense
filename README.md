@@ -165,12 +165,15 @@ pnpm lint
 pnpm lint:fix
 ```
 
-#### 스타일 규칙
-- 세미콜론 필수
-- 싱글 쿼트 사용
-- 2칸 들여쓰기
-- 줄 끝 공백 제거
-- 파일 끝 개행 필수
+**타입 검사:**
+```bash
+pnpm type-check
+```
+
+#### 권장 규칙
+- JavaScript/TypeScript 권장 규칙
+- React Hooks 규칙
+- React Refresh 규칙
 
 ### 개발 워크플로우
 1. 웹 브라우저에서 개발: `pnpm dev`
@@ -344,12 +347,15 @@ pnpm lint
 pnpm lint:fix
 ```
 
-#### Style Rules
-- Semicolons required
-- Single quotes
-- 2-space indentation
-- No trailing spaces
-- Newline at end of file required
+**Type checking:**
+```bash
+pnpm type-check
+```
+
+#### Recommended Rules
+- JavaScript/TypeScript recommended rules
+- React Hooks rules
+- React Refresh rules
 
 ### Development Workflow
 1. Develop in browser: `pnpm dev`

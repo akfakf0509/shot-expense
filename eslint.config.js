@@ -2,25 +2,30 @@ import js from '@eslint/js';
 import tseslint from 'typescript-eslint';
 import reactHooks from 'eslint-plugin-react-hooks';
 import reactRefresh from 'eslint-plugin-react-refresh';
-import react from 'eslint-plugin-react';
+import { readFileSync } from 'fs';
+
+// Parse .gitignore to get ignore patterns
+const gitignoreContent = readFileSync('.gitignore', 'utf-8');
+const ignorePatterns = gitignoreContent
+  .split('\n')
+  .map(line => line.trim())
+  .filter(line => line && !line.startsWith('#'))
+  .map(pattern => {
+    // Handle directory patterns
+    if (pattern.endsWith('/')) {
+      return pattern.slice(0, -1);
+    }
+    return pattern;
+  });
 
 export default tseslint.config(
-  { ignores: ['dist', 'node_modules', 'android', 'ios'] },
+  { ignores: ignorePatterns },
   {
     extends: [js.configs.recommended, ...tseslint.configs.recommended],
     files: ['**/*.{ts,tsx}'],
-    languageOptions: {
-      ecmaVersion: 2020,
-      parserOptions: {
-        ecmaFeatures: {
-          jsx: true,
-        },
-      },
-    },
     plugins: {
       'react-hooks': reactHooks,
       'react-refresh': reactRefresh,
-      'react': react,
     },
     rules: {
       ...reactHooks.configs.recommended.rules,
@@ -28,27 +33,6 @@ export default tseslint.config(
         'warn',
         { allowConstantExport: true },
       ],
-      // React 관련 규칙
-      'react/jsx-uses-react': 'off',
-      'react/react-in-jsx-scope': 'off',
-      // 스타일 관련 최소 규칙
-      'semi': ['error', 'always'],
-      'quotes': ['error', 'single', { avoidEscape: true }],
-      'comma-dangle': ['error', 'only-multiline'],
-      'no-trailing-spaces': 'error',
-      'eol-last': ['error', 'always'],
-      'no-multiple-empty-lines': ['error', { max: 1 }],
-      'indent': ['error', 2, { SwitchCase: 1 }],
-      // TypeScript 관련
-      '@typescript-eslint/no-unused-vars': ['error', { 
-        argsIgnorePattern: '^_',
-        varsIgnorePattern: '^_',
-      }],
-    },
-    settings: {
-      react: {
-        version: 'detect',
-      },
     },
   }
 );

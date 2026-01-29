@@ -1,5 +1,8 @@
 # 📸 찰칵가계부 (Shot Expense)
 
+[![CI](https://github.com/akfakf0509/shot-expense/actions/workflows/ci.yml/badge.svg)](https://github.com/akfakf0509/shot-expense/actions/workflows/ci.yml)
+[![Deploy](https://github.com/akfakf0509/shot-expense/actions/workflows/deploy.yml/badge.svg)](https://github.com/akfakf0509/shot-expense/actions/workflows/deploy.yml)
+
 [Korean](#한국어) | [English](#english)
 
 ---

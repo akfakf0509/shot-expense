@@ -1,4 +1,3 @@
-import React from 'react';
 import { useTransactionStore } from '../store/useTransactionStore';
 import { formatCurrency, formatDateTime } from '../utils/formatters';
 

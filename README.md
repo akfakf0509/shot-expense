@@ -150,6 +150,28 @@ shot-expense/
 └── package.json          # 프로젝트 설정
 ```
 
+### 코드 품질
+
+#### 린터 (ESLint)
+프로젝트에 ESLint가 설정되어 있습니다.
+
+**린트 검사:**
+```bash
+pnpm lint
+```
+
+**자동 수정:**
+```bash
+pnpm lint:fix
+```
+
+#### 스타일 규칙
+- 세미콜론 필수
+- 싱글 쿼트 사용
+- 2칸 들여쓰기
+- 줄 끝 공백 제거
+- 파일 끝 개행 필수
+
 ### 개발 워크플로우
 1. 웹 브라우저에서 개발: `pnpm dev`
 2. 변경사항 빌드: `pnpm build`
@@ -306,6 +328,28 @@ shot-expense/
 ├── capacitor.config.ts   # Capacitor configuration
 └── package.json          # Project configuration
 ```
+
+### Code Quality
+
+#### Linter (ESLint)
+The project has ESLint configured.
+
+**Run linting:**
+```bash
+pnpm lint
+```
+
+**Auto-fix issues:**
+```bash
+pnpm lint:fix
+```
+
+#### Style Rules
+- Semicolons required
+- Single quotes
+- 2-space indentation
+- No trailing spaces
+- Newline at end of file required
 
 ### Development Workflow
 1. Develop in browser: `pnpm dev`

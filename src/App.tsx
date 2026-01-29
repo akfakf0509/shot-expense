@@ -16,7 +16,7 @@ function App() {
       <header className="bg-indigo-600 text-white py-4 px-6 shadow-lg">
         <h1 className="text-2xl font-bold">📸 찰칵가계부</h1>
       </header>
-      
+
       <main className="max-w-2xl mx-auto p-4 pb-8">
         <QuickInput />
         <TransactionList />

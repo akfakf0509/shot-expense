@@ -9,7 +9,7 @@
     "preview": "vite preview",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "lint:fix": "eslint . --ext ts,tsx --fix",
-    "type-check": "tsc --noEmit",
+    "typecheck": "tsc --noEmit",
     "cap:sync": "pnpm build && cap sync",
     "cap:add:android": "cap add android",
     "cap:android": "pnpm cap:sync && cd android && ./gradlew assembleDebug",

@@ -167,7 +167,7 @@ pnpm lint:fix
 
 **타입 검사:**
 ```bash
-pnpm type-check
+pnpm typecheck
 ```
 
 #### 권장 규칙
@@ -349,7 +349,7 @@ pnpm lint:fix
 
 **Type checking:**
 ```bash
-pnpm type-check
+pnpm typecheck
 ```
 
 #### Recommended Rules

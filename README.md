@@ -159,6 +159,26 @@ shot-expense/
 3. Capacitor 동기화: `pnpm run cap:sync`
 4. Android에서 테스트: `pnpm run cap:android`
 
+### CI/CD
+이 프로젝트는 GitHub Actions를 사용한 자동화된 CI/CD 파이프라인을 포함합니다:
+
+#### CI 워크플로우 (`.github/workflows/ci.yml`)
+- **트리거**: `main`, `develop` 브랜치로의 푸시 및 풀 리퀘스트
+- **작업**:
+  - TypeScript 타입 체크 (`pnpm lint`)
+  - 프로젝트 빌드 (`pnpm build`)
+  - 빌드 아티팩트 업로드 (7일 보관)
+- **Node.js 버전**: 18.x, 20.x (매트릭스 빌드)
+
+#### 배포 워크플로우 (`.github/workflows/deploy.yml`)
+- **트리거**: `main` 브랜치로의 푸시 또는 수동 실행
+- **작업**:
+  - 프로젝트 빌드
+  - GitHub Pages에 자동 배포
+- **배포 URL**: GitHub Pages 활성화 시 자동 생성
+
+> **참고**: GitHub Pages 배포를 활성화하려면 저장소 설정에서 Pages를 활성화해야 합니다.
+
 ### 라이센스
 MIT License
 
@@ -315,6 +335,26 @@ shot-expense/
 2. Build changes: `pnpm build`
 3. Sync with Capacitor: `pnpm run cap:sync`
 4. Test on Android: `pnpm run cap:android`
+
+### CI/CD
+This project includes automated CI/CD pipelines using GitHub Actions:
+
+#### CI Workflow (`.github/workflows/ci.yml`)
+- **Triggers**: Push and pull requests to `main` and `develop` branches
+- **Tasks**:
+  - TypeScript type checking (`pnpm lint`)
+  - Project build (`pnpm build`)
+  - Upload build artifacts (7-day retention)
+- **Node.js versions**: 18.x, 20.x (matrix build)
+
+#### Deployment Workflow (`.github/workflows/deploy.yml`)
+- **Triggers**: Push to `main` branch or manual dispatch
+- **Tasks**:
+  - Build project
+  - Automatic deployment to GitHub Pages
+- **Deployment URL**: Auto-generated when GitHub Pages is enabled
+
+> **Note**: To enable GitHub Pages deployment, activate Pages in repository settings.
 
 ### License
 MIT License

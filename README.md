@@ -150,6 +150,31 @@ shot-expense/
 └── package.json          # 프로젝트 설정
 ```
 
+### 코드 품질
+
+#### 린터 (ESLint)
+프로젝트에 ESLint가 설정되어 있습니다.
+
+**린트 검사:**
+```bash
+pnpm lint
+```
+
+**자동 수정:**
+```bash
+pnpm lint:fix
+```
+
+**타입 검사:**
+```bash
+pnpm typecheck
+```
+
+#### 권장 규칙
+- JavaScript/TypeScript 권장 규칙
+- React Hooks 규칙
+- React Refresh 규칙
+
 ### 개발 워크플로우
 1. 웹 브라우저에서 개발: `pnpm dev`
 2. 변경사항 빌드: `pnpm build`
@@ -306,6 +331,31 @@ shot-expense/
 ├── capacitor.config.ts   # Capacitor configuration
 └── package.json          # Project configuration
 ```
+
+### Code Quality
+
+#### Linter (ESLint)
+The project has ESLint configured.
+
+**Run linting:**
+```bash
+pnpm lint
+```
+
+**Auto-fix issues:**
+```bash
+pnpm lint:fix
+```
+
+**Type checking:**
+```bash
+pnpm typecheck
+```
+
+#### Recommended Rules
+- JavaScript/TypeScript recommended rules
+- React Hooks rules
+- React Refresh rules
 
 ### Development Workflow
 1. Develop in browser: `pnpm dev`

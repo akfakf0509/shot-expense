@@ -20,7 +20,7 @@ export function QuickInput() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     const numAmount = parseFloat(amount);
     if (!numAmount || numAmount <= 0) return;
 
@@ -40,7 +40,7 @@ export function QuickInput() {
   return (
     <form onSubmit={handleSubmit} className="bg-white rounded-lg shadow-md p-6 mb-6">
       <h2 className="text-xl font-bold mb-4 text-gray-800">빠른 입력</h2>
-      
+
       <input
         ref={inputRef}
         type="text"

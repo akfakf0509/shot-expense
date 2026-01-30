@@ -28,7 +28,7 @@
 ### 시작하기
 
 #### 필수 요구사항
-- Node.js 22 이상
+- Node.js 24 이상
 - pnpm 10 이상
 - JDK 17 (Android 빌드용)
 - Android SDK Command Line Tools (Android 빌드용)
@@ -210,7 +210,7 @@ Shot Expense (찰칵가계부) is a mobile-first expense tracking app optimized 
 ### Getting Started
 
 #### Prerequisites
-- Node.js 22+
+- Node.js 24+
 - pnpm 10+
 - JDK 17 (for Android builds)
 - Android SDK Command Line Tools (for Android builds)

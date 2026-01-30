@@ -1,6 +1,6 @@
 # pnpm workspace configuration
 # - Dependency versions are managed in the catalog below
-# - engineStrict setting is in .npmrc
+# - engine-strict setting is in .npmrc
 # - minimumReleaseAge setting is in renovate.json
 
 packages:

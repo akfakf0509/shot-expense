@@ -1,0 +1,14 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:recommended",
+    "group:allNonMajor",
+    "security:minimumReleaseAgeNpm",
+    ":disableDependencyDashboard",
+    ":maintainLockFilesWeekly",
+  ],
+  "postUpdateOptions": ["pnpmDedupe"],
+  "rangeStrategy": "bump",
+  "schedule": ["* 8-13 * * 1"],
+  "timezone": "Asia/Seoul",
+}

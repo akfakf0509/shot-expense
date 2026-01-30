@@ -1,11 +1,10 @@
 # pnpm workspace configuration
-# - Dependency versions are managed in the catalog below
-# - engine-strict setting is in .npmrc
-# - minimumReleaseAge setting is in renovate.json
+# Centralized configuration for dependencies, engine-strict, and minimumReleaseAge
 
 packages:
   - '.'
 
+# Dependency version catalog
 catalog:
   '@capacitor/android': ^8.0.1
   '@capacitor/cli': ^8.0.1
@@ -31,3 +30,8 @@ catalog:
   typescript-eslint: ^8.54.0
   vite: ^7.3.1
   zustand: ^5.0.10
+
+# Configuration settings
+settings:
+  engine-strict: true
+  minimumReleaseAge: 3 days

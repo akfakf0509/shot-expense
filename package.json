@@ -20,17 +20,11 @@
     "cap:android:release": "pnpm cap:sync && cd android && ./gradlew assembleRelease",
     "cap:android:bundle": "pnpm cap:sync && cd android && ./gradlew bundleRelease"
   },
-  "dependencies": {
-    "@capacitor/core": "catalog:",
-    "@capacitor/preferences": "catalog:",
-    "date-fns": "catalog:",
-    "react": "catalog:",
-    "react-dom": "catalog:",
-    "zustand": "catalog:"
-  },
   "devDependencies": {
     "@capacitor/android": "catalog:",
     "@capacitor/cli": "catalog:",
+    "@capacitor/core": "catalog:",
+    "@capacitor/preferences": "catalog:",
     "@eslint/js": "catalog:",
     "@types/react": "catalog:",
     "@types/react-dom": "catalog:",
@@ -38,14 +32,18 @@
     "@typescript-eslint/parser": "catalog:",
     "@vitejs/plugin-react": "catalog:",
     "autoprefixer": "catalog:",
+    "date-fns": "catalog:",
     "eslint": "catalog:",
     "eslint-plugin-react": "catalog:",
     "eslint-plugin-react-hooks": "catalog:",
     "eslint-plugin-react-refresh": "catalog:",
     "postcss": "catalog:",
+    "react": "catalog:",
+    "react-dom": "catalog:",
     "tailwindcss": "catalog:",
     "typescript": "catalog:",
     "typescript-eslint": "catalog:",
-    "vite": "catalog:"
+    "vite": "catalog:",
+    "zustand": "catalog:"
   }
 }

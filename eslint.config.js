@@ -4,24 +4,16 @@ import reactHooks from 'eslint-plugin-react-hooks';
 import reactRefresh from 'eslint-plugin-react-refresh';
 import { readFileSync } from 'fs';
 
-// Parse .gitignore to get ignore patterns
-let ignorePatterns = ['dist', 'node_modules', 'android', 'ios']; // Default fallback
+let ignorePatterns = ['dist', 'node_modules', 'android', 'ios'];
 
 try {
   const gitignoreContent = readFileSync('.gitignore', 'utf-8');
   ignorePatterns = gitignoreContent
     .split('\n')
     .map(line => line.trim())
-    .filter(line => line && !line.startsWith('#') && !line.startsWith('!')) // Skip comments and negations
-    .map(pattern => {
-      // Handle directory patterns
-      if (pattern.endsWith('/')) {
-        return pattern.slice(0, -1);
-      }
-      return pattern;
-    });
+    .filter(line => line && !line.startsWith('#') && !line.startsWith('!'))
+    .map(pattern => pattern.endsWith('/') ? pattern.slice(0, -1) : pattern);
 } catch (error) {
-  // Use default ignore patterns if .gitignore can't be read
   console.warn('Could not read .gitignore, using default ignore patterns');
 }
 
@@ -36,10 +28,7 @@ export default tseslint.config(
     },
     rules: {
       ...reactHooks.configs.recommended.rules,
-      'react-refresh/only-export-components': [
-        'warn',
-        { allowConstantExport: true },
-      ],
+      'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],
     },
   }
 );

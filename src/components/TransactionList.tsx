@@ -35,7 +35,7 @@ export function TransactionList() {
             )}
             <p className="text-xs text-gray-400">{formatDateTime(transaction.createdAt)}</p>
           </div>
-          
+
           <button
             onClick={() => deleteTransaction(transaction.id)}
             className="ml-4 px-3 py-2 bg-red-100 text-red-600 rounded-lg hover:bg-red-200 transition-colors"

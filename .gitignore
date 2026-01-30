@@ -24,9 +24,18 @@ dist-ssr
 *.sw?
 
 # Capacitor
-android/
+# android/  # Commented out to include Android project with fixes
 ios/
 .capacitor
+
+# Android build artifacts
+android/.gradle/
+android/.idea/
+android/build/
+android/app/build/
+android/local.properties
+android/*.iml
+android/app/*.iml
 
 # Build outputs
 *.apk

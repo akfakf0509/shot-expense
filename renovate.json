@@ -10,4 +10,8 @@
   "rangeStrategy": "bump",
   "schedule": ["* 8-13 * * 1"],
   "timezone": "Asia/Seoul",
+  "minimumReleaseAge": "3 days",
+  "npm": {
+    "minimumReleaseAge": "3 days"
+  }
 }

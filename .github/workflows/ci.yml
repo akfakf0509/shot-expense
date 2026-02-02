@@ -61,7 +61,7 @@ jobs:
       - uses: actions/setup-java@v4
         with:
           distribution: 'temurin'
-          java-version: '17'
+          java-version: '21'
       
       - uses: pnpm/action-setup@v4
       
@@ -76,11 +76,5 @@ jobs:
       - name: Install dependencies
         run: pnpm install
       
-      - name: Build web app
-        run: pnpm build
-      
-      - name: Add Android platform
-        run: pnpm run cap:add:android
-      
       - name: Build Android APK
-        run: cd android && ./gradlew assembleDebug
+        run: pnpm run cap:android

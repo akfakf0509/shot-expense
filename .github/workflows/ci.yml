@@ -70,9 +70,6 @@ jobs:
           node-version-file: 'package.json'
           cache: 'pnpm'
       
-      - name: Setup Android SDK
-        uses: android-actions/setup-android@v3
-      
       - name: Install dependencies
         run: pnpm install
       

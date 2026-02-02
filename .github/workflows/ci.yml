@@ -70,6 +70,8 @@ jobs:
           node-version-file: 'package.json'
           cache: 'pnpm'
       
-      - run: pnpm install
-      - run: npx cap add android
-      - run: pnpm run cap:android
+      - name: Build Android APK
+        run: |
+          pnpm install
+          pnpm run cap:add:android
+          pnpm run cap:android

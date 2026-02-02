@@ -52,3 +52,26 @@ jobs:
 
       - run: pnpm install
       - run: pnpm build
+
+  android-build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      
+      - uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '21'
+      
+      - uses: pnpm/action-setup@v4
+      
+      - uses: actions/setup-node@v6
+        with:
+          node-version-file: 'package.json'
+          cache: 'pnpm'
+      
+      - name: Build Android APK
+        run: |
+          pnpm install
+          pnpm run cap:add:android
+          pnpm run cap:android

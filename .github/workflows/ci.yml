@@ -73,5 +73,8 @@ jobs:
       - name: Install dependencies
         run: pnpm install
       
+      - name: Add Android platform
+        run: npx cap add android
+      
       - name: Build Android APK
         run: pnpm run cap:android

@@ -137,7 +137,13 @@ pnpm run cap:android:bundle
 키스토어 생성:
 ```bash
 cd android
-keytool -genkey -v -keystore my-release-key.keystore -alias my-key-alias -keyalg RSA -keysize 2048 -validity 10000
+# 강력한 비밀번호를 입력하라는 메시지가 표시됩니다
+keytool -genkey -v \
+  -keystore my-release-key.keystore \
+  -alias my-key-alias \
+  -keyalg RSA \
+  -keysize 2048 \
+  -validity 10000
 ```
 
 `android/gradle.properties`에 추가:
@@ -149,7 +155,7 @@ MYAPP_RELEASE_KEY_PASSWORD=your-password
 ```
 
 ⚠️ **보안 주의사항**:
-- 키스토어는 반드시 강력하고 고유한 비밀번호를 사용하세요
+- 키스토어는 반드시 강력하고 고유한 비밀번호를 사용하세요 (최소 8자, 대소문자/숫자/특수문자 포함)
 - 키스토어와 비밀번호를 안전한 장소에 백업하세요
 - 키스토어 파일과 비밀번호를 절대 공개 리포지토리에 커밋하지 마세요
 
@@ -339,7 +345,13 @@ pnpm run cap:android:bundle
 Generate keystore:
 ```bash
 cd android
-keytool -genkey -v -keystore my-release-key.keystore -alias my-key-alias -keyalg RSA -keysize 2048 -validity 10000
+# You will be prompted for strong passwords
+keytool -genkey -v \
+  -keystore my-release-key.keystore \
+  -alias my-key-alias \
+  -keyalg RSA \
+  -keysize 2048 \
+  -validity 10000
 ```
 
 Add to `android/gradle.properties`:
@@ -351,7 +363,7 @@ MYAPP_RELEASE_KEY_PASSWORD=your-password
 ```
 
 ⚠️ **Security Notes**:
-- Use strong, unique passwords for release keystores
+- Use strong, unique passwords for release keystores (minimum 8 characters with uppercase/lowercase/numbers/special characters)
 - Backup your keystore and passwords securely
 - Never commit keystore files or passwords to public repositories
 

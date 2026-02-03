@@ -1,0 +1,58 @@
+name: Release and Android Build
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  NODE_OPTIONS: --max-old-space-size=8192
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '21'
+
+      - uses: pnpm/action-setup@v4
+
+      - uses: actions/setup-node@v6
+        with:
+          node-version-file: 'package.json'
+          cache: 'pnpm'
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Add Android platform
+        run: pnpm run cap:add:android
+
+      - name: Build Android debug APK
+        run: pnpm run cap:android
+
+      - name: Generate release tag
+        id: tag
+        run: echo "tag=v$(date -u +'%Y%m%d-%H%M%S')-${GITHUB_SHA:0:7}" >> $GITHUB_OUTPUT
+
+      - name: Create Release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          TAG="${{ steps.tag.outputs.tag }}"
+          gh release create "$TAG" \
+            --title "Release $TAG" \
+            --notes "Automated release from main branch - Commit: ${{ github.sha }}" \
+            --prerelease \
+            android/app/build/outputs/apk/debug/app-debug.apk

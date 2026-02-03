@@ -39,9 +39,9 @@ jobs:
           path: |
             ~/.gradle/caches
             ~/.gradle/wrapper
-            android/.gradle
-          key: ${{ runner.os }}-gradle-${{ hashFiles('android/gradle/wrapper/gradle-wrapper.properties', 'android/build.gradle', 'android/app/build.gradle') }}
+          key: ${{ runner.os }}-gradle-${{ hashFiles('package.json', 'capacitor.config.ts') }}-${{ hashFiles('android/**/*.gradle*', 'android/**/gradle-wrapper.properties') }}
           restore-keys: |
+            ${{ runner.os }}-gradle-${{ hashFiles('package.json', 'capacitor.config.ts') }}-
             ${{ runner.os }}-gradle-
 
       - name: Install dependencies

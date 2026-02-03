@@ -49,6 +49,9 @@ jobs:
       - name: Add Android platform
         run: pnpm run cap:add:android
 
+      - name: Generate debug keystore
+        run: bash scripts/generate-android-keystore.sh
+
       - name: Build Android debug APK
         run: pnpm run cap:android
 

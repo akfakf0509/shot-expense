@@ -99,7 +99,17 @@ sdkmanager --licenses
 pnpm run cap:add:android
 ```
 
-#### 4. APK 빌드
+#### 4. APK 서명 설정
+
+APK를 Android 기기에 설치하려면 올바른 서명이 필요합니다. 아래 스크립트를 실행하여 디버그 키스토어를 생성하세요:
+
+```bash
+bash scripts/generate-android-keystore.sh
+```
+
+이 과정은 한 번만 실행하면 되며, 키스토어는 자동으로 `.gitignore`에 의해 제외됩니다.
+
+#### 5. APK 빌드
 
 **디버그 APK (테스트용):**
 ```bash
@@ -117,7 +127,12 @@ pnpm run cap:android:release
 pnpm run cap:android:bundle
 ```
 
-#### 5. 서명 설정 (릴리즈 빌드용)
+⚠️ **주의**: 
+- 생성된 APK는 개발자 서명이 포함되어 있어 "알 수 없는 출처" 경고가 표시될 수 있습니다
+- Android 기기 설정에서 "알 수 없는 출처의 앱 설치 허용"을 활성화해야 합니다
+- Play Store 배포용으로는 AAB 형식을 사용하세요
+
+#### 6. 프로덕션 서명 (선택사항)
 
 키스토어 생성:
 ```bash
@@ -281,7 +296,17 @@ sdkmanager --licenses
 pnpm run cap:add:android
 ```
 
-#### 4. Build APK
+#### 4. APK Signing Setup
+
+To install the APK on Android devices, proper signing is required. Run the following script to generate a debug keystore:
+
+```bash
+bash scripts/generate-android-keystore.sh
+```
+
+This only needs to be done once, and the keystore is automatically excluded by `.gitignore`.
+
+#### 5. Build APK
 
 **Debug APK (for testing):**
 ```bash
@@ -299,7 +324,12 @@ pnpm run cap:android:release
 pnpm run cap:android:bundle
 ```
 
-#### 5. Signing Configuration (for release builds)
+⚠️ **Important**: 
+- Generated APKs include developer signatures and may show "unknown source" warnings
+- Enable "Install apps from unknown sources" in Android device settings
+- Use AAB format for Play Store distribution
+
+#### 6. Production Signing (Optional)
 
 Generate keystore:
 ```bash

@@ -84,6 +84,7 @@ jobs:
         run: |
           pnpm install
           pnpm run cap:add:android
+          bash scripts/generate-android-keystore.sh
           pnpm run cap:android
       
       - name: Upload APK artifact

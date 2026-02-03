@@ -72,6 +72,13 @@ Play Store에 배포하려면 별도의 릴리즈 키스토어를 생성하고 �
 keytool -genkey -v -keystore release.keystore -alias release -keyalg RSA -keysize 2048 -validity 10000
 ```
 
+⚠️ **중요한 보안 주의사항**:
+- 릴리즈 키스토어는 **반드시 강력하고 고유한 비밀번호**를 사용해야 합니다
+- 키스토어와 비밀번호를 **안전한 장소에 백업**하세요
+- 키스토어를 잃어버리면 앱을 업데이트할 수 없습니다
+- 키스토어 파일과 비밀번호를 **절대 공개 리포지토리에 커밋하지 마세요**
+- 비밀번호는 환경 변수나 보안 볼트에 저장하세요
+
 ---
 
 # Android APK Installation Issue Resolution Guide
@@ -147,3 +154,10 @@ For Play Store distribution, generate and use a separate release keystore:
 ```bash
 keytool -genkey -v -keystore release.keystore -alias release -keyalg RSA -keysize 2048 -validity 10000
 ```
+
+⚠️ **Critical Security Notes**:
+- Release keystore **must use strong, unique passwords**
+- **Backup your keystore and passwords** in a secure location
+- If you lose your keystore, you cannot update your app
+- **Never commit** keystore files or passwords to public repositories
+- Store passwords in environment variables or secure vaults

@@ -2,6 +2,10 @@
 
 # Generate debug keystore for Android APK signing
 # This ensures APKs can be installed on devices
+# 
+# ⚠️  WARNING: This debug keystore uses standard Android debug credentials
+# and should NEVER be used for production releases or Play Store distribution.
+# For production, generate a separate release keystore with secure credentials.
 
 set -e
 
@@ -19,6 +23,7 @@ if [ -f "$KEYSTORE_FILE" ]; then
 fi
 
 echo "Generating debug keystore for APK signing..."
+echo "⚠️  Using standard debug credentials - NOT suitable for production!"
 keytool -genkey -v \
     -keystore "$KEYSTORE_FILE" \
     -alias androiddebugkey \
@@ -32,3 +37,4 @@ keytool -genkey -v \
 echo "✓ Debug keystore generated successfully at $KEYSTORE_FILE"
 echo ""
 echo "The APK will now be properly signed and installable on Android devices."
+echo "⚠️  For production releases, create a separate release keystore with secure credentials."

@@ -148,6 +148,11 @@ MYAPP_RELEASE_STORE_PASSWORD=your-password
 MYAPP_RELEASE_KEY_PASSWORD=your-password
 ```
 
+⚠️ **보안 주의사항**:
+- 키스토어는 반드시 강력하고 고유한 비밀번호를 사용하세요
+- 키스토어와 비밀번호를 안전한 장소에 백업하세요
+- 키스토어 파일과 비밀번호를 절대 공개 리포지토리에 커밋하지 마세요
+
 ⚠️ **주의**: `.gitignore`에 키스토어와 비밀번호 추가 필수!
 
 ### 프로젝트 구조
@@ -345,7 +350,10 @@ MYAPP_RELEASE_STORE_PASSWORD=your-password
 MYAPP_RELEASE_KEY_PASSWORD=your-password
 ```
 
-⚠️ **Important**: Add keystore and passwords to `.gitignore`!
+⚠️ **Security Notes**:
+- Use strong, unique passwords for release keystores
+- Backup your keystore and passwords securely
+- Never commit keystore files or passwords to public repositories
 
 ### Project Structure
 ```

@@ -52,6 +52,9 @@ jobs:
       - name: Build Android debug APK
         run: pnpm run cap:android
 
+      - name: Build Android AAB
+        run: pnpm run cap:android:bundle
+
       - name: Generate release tag
         id: tag
         run: echo "tag=v$(date -u +'%Y%m%d-%H%M%S')-${GITHUB_SHA:0:7}" >> $GITHUB_OUTPUT
@@ -65,4 +68,5 @@ jobs:
             --title "Release $TAG" \
             --notes "Automated release from main branch - Commit: ${{ github.sha }}" \
             --prerelease \
-            android/app/build/outputs/apk/debug/app-debug.apk
+            android/app/build/outputs/apk/debug/app-debug.apk \
+            android/app/build/outputs/bundle/release/app-release.aab

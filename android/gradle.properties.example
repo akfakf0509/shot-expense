@@ -1,8 +1,9 @@
-# Copy this file to gradle.properties and fill in your actual values
-# IMPORTANT: Never commit gradle.properties with real credentials to git
+# Copy this file to gradle.properties.local and fill in your actual credentials
+# gradle.properties.local is gitignored and safe for local development
+# IMPORTANT: Never commit real credentials to git
 
 # Release signing configuration
 RELEASE_STORE_FILE=release.keystore
 RELEASE_KEY_ALIAS=shot-expense-release
-RELEASE_STORE_PASSWORD=your-store-password-here
-RELEASE_KEY_PASSWORD=your-key-password-here
+RELEASE_STORE_PASSWORD=changeit
+RELEASE_KEY_PASSWORD=changeit

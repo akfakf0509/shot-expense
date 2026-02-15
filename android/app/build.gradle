@@ -1,5 +1,15 @@
 apply plugin: 'com.android.application'
 
+// Load local signing properties if available
+def localPropertiesFile = rootProject.file('gradle.properties.local')
+if (localPropertiesFile.exists()) {
+    def localProperties = new Properties()
+    localProperties.load(new FileInputStream(localPropertiesFile))
+    localProperties.each { key, value ->
+        project.ext.set(key, value)
+    }
+}
+
 android {
     namespace = "com.akfakf0509.shotexpense"
     compileSdk = rootProject.ext.compileSdkVersion

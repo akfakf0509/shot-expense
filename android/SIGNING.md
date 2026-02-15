@@ -42,15 +42,19 @@ keytool -genkey -v \
 # .gitignore에 이미 포함됨
 android/*.keystore
 android/*.jks
+android/gradle.properties.local
 ```
 
 ### 2. 비밀번호 관리
 
-**방법 1: 로컬 gradle.properties (권장)**
+**방법 1: 로컬 gradle.properties.local (권장)**
 ```bash
 cp android/gradle.properties.example android/gradle.properties.local
 # gradle.properties.local 파일을 수정하여 실제 비밀번호 입력
 ```
+
+이 파일은 `.gitignore`에 포함되어 있어 안전하게 로컬에서 사용할 수 있습니다.
+빌드 시스템이 자동으로 이 파일을 읽어 서명에 사용합니다.
 
 **방법 2: 환경 변수**
 ```bash

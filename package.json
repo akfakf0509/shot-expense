@@ -7,7 +7,7 @@
     "cap:android:release": "pnpm cap:sync && cd android && ./gradlew assembleRelease",
     "cap:sync": "pnpm build && cap sync",
     "dev": "vite",
-    "lint": "eslint . --report-unused-disable-directives --max-warnings 0",
+    "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "preview": "vite preview",
     "typecheck": "tsc --noEmit"

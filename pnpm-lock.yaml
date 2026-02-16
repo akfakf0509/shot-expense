@@ -9,17 +9,17 @@ importers:
   .:
     devDependencies:
       '@capacitor/android':
-        specifier: ^8.0.2
+        specifier: ^8.1.0
         version: 8.1.0(@capacitor/core@8.1.0)
       '@capacitor/cli':
-        specifier: ^8.0.2
+        specifier: ^8.1.0
         version: 8.1.0
       '@capacitor/core':
-        specifier: ^8.0.2
+        specifier: ^8.1.0
         version: 8.1.0
       '@capacitor/preferences':
-        specifier: ^8.0.0
-        version: 8.0.0(@capacitor/core@8.1.0)
+        specifier: ^8.0.1
+        version: 8.0.1(@capacitor/core@8.1.0)
       '@eslint/js':
         specifier: ^10.0.1
         version: 10.0.1(eslint@10.0.0(jiti@2.6.1))
@@ -27,7 +27,7 @@ importers:
         specifier: ^4.1.18
         version: 4.1.18(vite@7.3.1(@types/node@25.2.3)(jiti@2.6.1)(lightningcss@1.30.2))
       '@types/react':
-        specifier: ^19.2.13
+        specifier: ^19.2.14
         version: 19.2.14
       '@types/react-dom':
         specifier: ^19.2.3
@@ -176,8 +176,8 @@ packages:
   '@capacitor/core@8.1.0':
     resolution: {integrity: sha512-UfMBMWc1v7J+14AhH03QmeNwV3HZx3qnOWhpwnHfzALEwAwlV/itQOQqcasMQYhOHWL0tiymc5ByaLTn7KKQxw==}
 
-  '@capacitor/preferences@8.0.0':
-    resolution: {integrity: sha512-NsE7Srk9Zr0SxiVelHGiAJR7M238eyCD6dI/sDhu3ckKwFrXn8/GRyGr+SZcnGLlQKy948li8Pfcfr0dqxNf1g==}
+  '@capacitor/preferences@8.0.1':
+    resolution: {integrity: sha512-T6no3ebi79XJCk91U3Jp/liJUwgBdvHR+s6vhvPkPxSuch7z3zx5Rv1bdWM6sWruNx+pViuEGqZvbfCdyBvcHQ==}
     peerDependencies:
       '@capacitor/core': '>=8.0.0'
 
@@ -1847,6 +1847,7 @@ packages:
   tar@7.5.7:
     resolution: {integrity: sha512-fov56fJiRuThVFXD6o6/Q354S7pnWMJIVlDBYijsTNx6jKSE4pvrDTs6lUnmGvNyfJwFQQwWy3owKz1ucIhveQ==}
     engines: {node: '>=18'}
+    deprecated: Old versions of tar are not supported, and contain widely publicized security vulnerabilities, which have been fixed in the current version. Please update. Support for old versions may be purchased (at exorbitant rates) by contacting i@izs.me
 
   through2@4.0.2:
     resolution: {integrity: sha512-iOqSav00cVxEEICeD7TjLB1sueEL+81Wpzp2bY17uZjZN0pWZPuo4suZ/61VujxmqSGFfgOcNuTZ85QJwNZQpw==}
@@ -2193,7 +2194,7 @@ snapshots:
     dependencies:
       tslib: 2.8.1
 
-  '@capacitor/preferences@8.0.0(@capacitor/core@8.1.0)':
+  '@capacitor/preferences@8.0.1(@capacitor/core@8.1.0)':
     dependencies:
       '@capacitor/core': 8.1.0
 
